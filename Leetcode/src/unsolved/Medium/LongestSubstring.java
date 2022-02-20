@@ -21,7 +21,7 @@ public class LongestSubstring {
     }
 }
 
-//1. buildin .substring()을 사용한다.
+//1. .substring()을 사용한다.
 //2. 시간복잡도는 O(n)
 //3. temp를 사용해서 n번 부분해를 계산해주고, 기존의 substring보다 길경우, 대체한다.
 
