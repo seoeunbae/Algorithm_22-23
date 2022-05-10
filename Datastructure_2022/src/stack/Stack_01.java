@@ -11,7 +11,8 @@ public class Stack_01 {
     }
 
     public static List pop(List stack){
-        stack.remove(0);
+        int length = stack.size();
+        stack.remove(length-1);
         return stack;
     }
 
