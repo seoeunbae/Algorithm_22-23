@@ -1,3 +1,5 @@
+package array;
+
 public class Array_p02 {
     static String dataset[] = {
             "Braund, Mr. Owen Harris",
