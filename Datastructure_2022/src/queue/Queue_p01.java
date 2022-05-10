@@ -5,12 +5,7 @@ import java.util.List;
 
 public class Queue_p01 {
     public static List enqueue(Integer number, List queue){
-
-        if( queue.isEmpty()){
-            queue.add(number);
-        } else {
-            queue.add(0, number);
-        }
+        queue.add(0, number);
         return queue;
     }
 
