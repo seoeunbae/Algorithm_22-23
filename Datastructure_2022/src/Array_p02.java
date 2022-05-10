@@ -1,4 +1,4 @@
-public class String_p02 {
+public class Array_p02 {
     static String dataset[] = {
             "Braund, Mr. Owen Harris",
             "Cumings, Mrs. John Bradley (Florence Briggs Thayer)",
