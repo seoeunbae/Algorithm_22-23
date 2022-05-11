@@ -37,20 +37,33 @@ public class LinkedList_02 {
             }
         }
 
-        public Node<T> search(T data){
+        private Node<T> search(T data){
             if(this.head == null){
                 return null;
             } else {
-                while(head.next != null){
-                    Node<T> node = head;
-                    T thisData = head.data;
-                    if(thisData == data){
-                        return head;
+//                Node<T> node = head;
+//                while(node.next != null){
+//                    T thisData = node.data;
+//                    if(thisData == data){
+//                        return node;
+//                    }
+//                    node = node.next;
+//                }
+//                return null;
+                //윗부분은 혼자구현, 아래는 모범답안
+                Node<T> node = this.head;
+                while(node != null){
+                    if(node.data == data){
+                        return node;
+                    } else{
+                        node = node.next;
                     }
-                    this.head = head.next;
                 }
+                return null;
             }
+
         }
+
         public void addNodeInside(T data, T isData){
             Node<T> searchedNode = this.search(isData);
             //데이터를 넣을 기준데이터가 없는 경우는 맨 뒤에 넣는다.
@@ -64,6 +77,17 @@ public class LinkedList_02 {
 
             }
         }
+    }
+
+    public static void main(String[] args) {
+        SingleLinkedList<Integer> myLinkedList = new SingleLinkedList<>();
+        myLinkedList.addNode(12);
+        myLinkedList.addNode(30);
+        myLinkedList.addNode(19);
+        myLinkedList.printAll();
+        System.out.println();
+        myLinkedList.addNodeInside(29,12);
+        myLinkedList.printAll();
     }
 
 }
