@@ -1,5 +1,5 @@
 package linkedlist;
-//linkedlist 사이에 데이터를 추가하는 기능
+//linkedlist 사이에 데이터를 추가하는 기능, 삭제하는 기능
 public class LinkedList_02 {
     public static class SingleLinkedList<T>{
         public Node<T> head = null;
@@ -77,7 +77,30 @@ public class LinkedList_02 {
 
             }
         }
+        public boolean delNode(T isData){
+            if(this.head == null){
+                return false;
+            } else{//삭제할 데이터가 헤드인경우
+                Node<T> node = head;
+                if(node.data == isData){
+                    //delete
+                    this.head = this.head.next;
+                    return true;
+                } else { //삭제할 데이터가 헤드가 아닌경우
+                    while(node.next != null){
+                        if(node.next.data == isData){
+                            node.next = node.next.next;
+                            return true;
+                        }else{
+                            node = node.next;
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
     }
+
 
     public static void main(String[] args) {
         SingleLinkedList<Integer> myLinkedList = new SingleLinkedList<>();
@@ -87,6 +110,9 @@ public class LinkedList_02 {
         myLinkedList.printAll();
         System.out.println();
         myLinkedList.addNodeInside(29,12);
+        myLinkedList.printAll();
+        System.out.println();
+        System.out.println(myLinkedList.delNode(30));
         myLinkedList.printAll();
     }
 
