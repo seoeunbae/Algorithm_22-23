@@ -77,12 +77,6 @@ public class LinkedList_04 {
                 tail = head;
                 return true;
             } else if(this.head.data == isData){
-//                Node<T> node = head;
-//                while( node != null){
-//                    if( node.data == isData){
-//
-//                    }
-//                }
                 Node<T> newHead = new Node<>(data);
                 newHead.next = head;
                 head = newHead;
@@ -106,7 +100,35 @@ public class LinkedList_04 {
                 return false;
             }
         }
+
+        public boolean insertNodePrevSelf(T data, T isData ){
+            if( head == null){
+                head = new Node<T>(data);
+                tail = head;
+                return true;
+            } else {
+                Node<T> node = head;
+                while( node != null){
+                    if( node.data == isData){
+                        Node<T> newNode = new Node<>(data);
+                        newNode.prev = node.prev;
+                        node.prev.next = newNode;
+                        newNode.next = node;
+                        node.prev = newNode;
+                        //순서중요!
+//                      !! 기준노드가 헤드노드일경우, 122줄에서 node.prev==null인데 접근하기때문에, nullpointexcpetion이 나옴
+//                      따로 if문을 통해 1. 기준이 head노드인 경우 2. 중간노드에 insert인 경우 두가지로 분기를 해줘야한다
+//                      위에 모범답안 참고하기.
+                        return true;
+                    } else {
+                        node = node.next;
+                    }
+                }
+                return false;
+            }
+        }
     }
+
 
 
     public static void main(String[] args) {
@@ -118,6 +140,9 @@ public class LinkedList_04 {
         myDoubleLinkedlist.printAll();
         System.out.println();
         myDoubleLinkedlist.insertNodePrev(15,20);
+        myDoubleLinkedlist.insertNodePrev(5,10);
         myDoubleLinkedlist.printAll();
     }
+
+
 }
