@@ -1,5 +1,5 @@
 package hash;
-
+//Chaining기법,개방해슁을 구현한 코드.
 public class Hash_01 {
     public static class MyHash{
         public Slot[] hashTable; // 객체배열
