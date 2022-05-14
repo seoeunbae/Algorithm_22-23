@@ -142,6 +142,44 @@ public class Tree_02 {
                     changeParentNode = changeNode;
                     changeNode = changeNode.left;
                 }
+                //여기까지 실행되면, changeNode에는 삭제할 노드의 오른쪽 노드중에서
+                // 가장 작은 값을 가진 노드가 들어있음.
+                // case3-1-1:changeNode의 childnode가 없을때
+                if(changeNode.right != null){
+                    changeParentNode.left = changeNode.right;
+
+                } else{ // case3-1-2: changeNode의 오른쪽 childNode가 있을때
+                    changeParentNode.left = null;
+
+                }
+                //currParentNode의 왼쪽 childNode에 , 삭제할 노드의 오른ㅈ쪽 자식,
+                //가장 작은 값을 가진 changeNode를 연결
+                currParentNode.left = changeNode;
+                //parentNode의 왼쪽 childNode가 현재, changeNode이고,
+                //changeNode의 왼쪽/오른쪽 childNode를 모두, 삭제할 currentNode의
+                //기존 왼쪽/오른쪽 Node로 변경
+                changeNode.right = currNode.right;
+                changeNode.left = currNode.left;
+
+                currNode = null;
+            } else { //case3-2: 삭제할 node가 childNode를두개 가지고 있고, 삭제할 노드가 부모 노드의 오른쪽에 있을때
+                Node changeNode = currNode.right;
+                Node changeParentNode = currNode.right;
+
+                while(changeNode.left != null){
+                    changeParentNode = changeNode;
+                    changeNode = changeNode.left;
+                }
+                //currParentNode의 오른쪽 childNode에 , 삭제할 노드의 오른ㅈ쪽 자식,
+                //가장 작은 값을 가진 changeNode를 연결
+                currParentNode.left = changeNode;
+                //parentNode의 왼쪽 childNode가 현재, changeNode이고,
+                //changeNode의 왼쪽/오른쪽 childNode를 모두, 삭제할 currentNode의
+                //기존 왼쪽/오른쪽 Node로 변경
+                changeNode.right = currNode.right;
+                changeNode.left = currNode.left;
+
+                currNode = null;
             }
         }
         return true;
@@ -160,3 +198,7 @@ public class Tree_02 {
 
 
 }
+
+//!! 중요!!
+// 시간복잡도: O(logN)
+//최악의경우 : O(N)이다. 모두탐색하는경우.
