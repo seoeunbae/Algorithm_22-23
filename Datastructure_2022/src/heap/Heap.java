@@ -8,6 +8,7 @@ public class Heap {
     //왼쪽 자식노드인덱스 = 부모노드인덱스 * 2
     //오른쪽 자식노드인덱스 = 부모노드인덱스 * 2 + 1
     // 보통 내부 attribute 는 private 으로 선언하기도 하지만, 외부에서도 간단히 데이터를 확인할 수 있도록 public 으로 선언
+    // 한달뒤에 다시 시도하기
     public ArrayList<Integer> heapArray = null;
 
     public Heap(Integer data) {
