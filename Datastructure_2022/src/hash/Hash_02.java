@@ -1,5 +1,5 @@
 package hash;
-
+//**open hashing 을 구현한 코드**(LinkedList활용)
 public class Hash_02 {
     public static class MyHash {
         public Slot[] hashTable; // 객체배열
