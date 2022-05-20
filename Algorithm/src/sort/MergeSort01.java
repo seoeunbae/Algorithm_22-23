@@ -1,7 +1,7 @@
 package sort;
 
 import java.util.ArrayList;
-
+//이 부분 다시 한번 보기
 public class MergeSort01 {
     //배열을 앞뒤 두 배열로 짜르는 코드 작성(mergesort중에 분할하는과정에 사용됨)
     public class Split{
@@ -20,7 +20,7 @@ public class MergeSort01 {
     }
 
     //병합정렬 코드
-    public class MergeSort{
+    public static class MergeSort{
         public ArrayList<Integer> mergeSplitFunc(ArrayList<Integer> dataList){
             if(dataList.size() <= 1){
                 return dataList;
@@ -67,4 +67,18 @@ public class MergeSort01 {
         }
     }
 
+    public static void main(String[] args) {
+        ArrayList<Integer> testData = new ArrayList<>();
+
+        for(int index = 0 ; index< 100; index++){
+            testData.add((int)(Math.random()*100));
+        }
+
+        MergeSort mSort = new MergeSort();
+        System.out.println(mSort.mergeSplitFunc(testData));
+    }
 }
+
+//각 단계별 시간복잡도: O(n)
+//단계는 logn만큼 만들어짐
+//즉 총 시간복잡도는 O(nlogn)
