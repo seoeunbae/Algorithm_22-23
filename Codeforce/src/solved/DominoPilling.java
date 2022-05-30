@@ -11,3 +11,4 @@ public class DominoPilling {
         System.out.println(width/2);
     }
 }
+//greedy, math
