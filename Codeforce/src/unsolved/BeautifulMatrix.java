@@ -1,4 +1,4 @@
-package solved;
+package unsolved;
 
 import javax.sound.midi.SysexMessage;
 import java.util.Arrays;
@@ -22,3 +22,4 @@ public class BeautifulMatrix {
 
 
 }
+//Math
