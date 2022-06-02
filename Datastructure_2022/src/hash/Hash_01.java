@@ -1,4 +1,7 @@
 package hash;
+
+import java.util.List;
+
 //Chaining기법,개방해슁을 구현한 코드.
 public class Hash_01 {
     public static class MyHash{
@@ -47,7 +50,9 @@ public class Hash_01 {
             System.out.println(mainObject.saveData("Bae","010999992333"));
             System.out.println(mainObject.getData("Bae"));
         }
+
     }
+
 }
 //시간복잡도= O(1) 일반적인 경우
 //최악의 경우 = O(n) 해쉬충돌이 모두발생하는 경우.
