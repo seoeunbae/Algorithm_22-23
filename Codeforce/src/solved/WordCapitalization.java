@@ -1,6 +1,5 @@
 package solved;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class WordCapitalization {
