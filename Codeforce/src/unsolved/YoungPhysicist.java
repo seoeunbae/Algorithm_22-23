@@ -21,7 +21,7 @@ public class YoungPhysicist {
             for(int j = i; j < n*3; j = j + 3) {
                 sum += input[j];
             }
-            // System.out.println(sum);
+            
             if(sum != 0) {
                 flag = false;
                 break;
