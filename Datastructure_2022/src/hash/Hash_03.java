@@ -1,5 +1,5 @@
 package hash;
-//Linear Probing기법,폐쇄해슁기법을 구현한 코드.
+//Linear Probing기법(==폐쇄해슁기법)을 구현한 코드.
 public class Hash_03 {
     public static class MyHash{
         public Slot[] hashTable; // 객체배열
