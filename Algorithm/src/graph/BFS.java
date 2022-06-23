@@ -26,8 +26,9 @@ public class BFS {//2개의 큐(방문된 노드, 탐색이 필요한 노드)
         ArrayList<String> visited = new ArrayList<>();
         ArrayList<String> need_visit = new ArrayList<>();
         need_visit.add(first);
-
+        int count = 0;
         while(need_visit.size()>0){
+            count +=1;
             if(visited.contains(need_visit.get(0))){
                 need_visit.remove(0);
                 continue;
@@ -40,3 +41,4 @@ public class BFS {//2개의 큐(방문된 노드, 탐색이 필요한 노드)
         System.out.println(visited);
     }
 }
+//시간복잡도: O(N+V) 노드수+간선수
