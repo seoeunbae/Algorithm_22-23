@@ -139,3 +139,4 @@ public class Heap {
     }
 }
 
+//시간복잡도: O(logN),즉 트리의 높이 만큼 비교를 한다.
