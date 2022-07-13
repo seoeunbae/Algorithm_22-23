@@ -1,4 +1,4 @@
-package unsolved;
+package solved;
 
 import java.util.*;
 
