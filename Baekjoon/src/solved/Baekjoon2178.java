@@ -2,7 +2,7 @@ package solved;
 
 import java.util.*;
 
-public class Backjoon2178 {
+public class Baekjoon2178 {
     static int n;
     static int m;
     static int[][] maze;
