@@ -19,6 +19,7 @@ public class ValidParentheses {
         map.put('[',']');
         map.put('(',')');
 
+
         List<Character> stack = new ArrayList<>();
 
 
