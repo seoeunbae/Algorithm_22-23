@@ -1,5 +1,6 @@
 package solved;
 
+import javax.crypto.spec.PBEKeySpec;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,37 +8,36 @@ import java.util.*;
 
 public class Baekjoon_18870 {
     public static void main(String[] args) throws IOException {
-        BufferedReader buffer= new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(buffer.readLine());
-        List<Integer> integers = new ArrayList<>();
-        HashMap<Integer, Integer> rankingMap = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
 
-        String[] readline = buffer.readLine().split(" ");
-        for(int i=0;i<readline.length;i++){
-            int integer = Integer.parseInt(readline[i]);
-            integers.add(integer);
-        }
+       int[] intX = new int[num];
+       int[] origin = new int[num];
 
-        for(int i=0 ; i < n ; i++){
+       for(int i=0;i<num;i++){
+           intX[i] = origin[i] = scanner.nextInt();
+       }
 
-        }
-        Func(n,integers);
+        Arrays.sort(intX);
+        System.out.println(Func(origin, intX));
     }
 
-    public static void Func(int n , List<Integer> integers){
-        List<Integer> order = new ArrayList<>();
-        HashMap<Integer, Integer> orders = new HashMap<>();
+    public static String Func(int[] origin, int[] sorted){
 
-        Collections.sort(integers);
-
-        int i =0;
-        if(!orders.containsKey(integers.get(i))){
-            orders.put(integers.get(i), i);
-            i++;
-        }//containskey로 중복
-
-        for(int j=0;j< orders.size();j++){
-            System.out.println(orders.get(j));
+        HashMap<Integer, Integer> ranking = new HashMap<>();
+        int j=0;
+        for(int i=0;i< sorted.length;i++){
+            if(!ranking.containsKey(sorted[i])){
+                ranking.put(sorted[i], j);
+                j++;
+            }
         }
+
+        StringBuilder sb = new StringBuilder();
+        for(int i=0;i< origin.length ;i++){
+            sb.append(ranking.get(origin[i])+" ");
+        }
+        return sb.toString();
+
     }
 }
