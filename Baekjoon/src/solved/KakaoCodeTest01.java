@@ -35,7 +35,7 @@ class KakaoCodeTest01 {
             if (temp > 12) {
                 yearOfDeadline= yearOfStart + termsMap.get(kind) / 12;
                 monthOfDeadline = monthOfStart + termsMap.get(kind) % 12;
-                if(monthOfDeadline > 12){
+                if( monthOfDeadline > 12){
                     yearOfDeadline += 1;
                     monthOfDeadline -= 12;
                 }
