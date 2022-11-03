@@ -48,7 +48,6 @@ public class Baekjoon_2644 {
     }
 
     public static Integer dfs(int start, int target, int count){
-//        ans++;
         visited[start]=true;
 
             for(int i: relations[start]){
