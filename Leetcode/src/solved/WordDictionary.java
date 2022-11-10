@@ -1,6 +1,7 @@
 package solved;
 
 import java.util.HashMap;
+import java.util.Map;
 
 class WordDictionary {
     private class TrieNode{
@@ -34,21 +35,40 @@ class WordDictionary {
         }
         thisNode.setIsLast(true);
     }
+//
 
     public boolean search(String word) {
-        TrieNode thisNode = this.rootNode;
+        return dfsSearch(rootNode.childNodes , word,0);
+    }
 
-        for(int i=0 ; i< word.length() ; i++){
-            Character thisChar = word.charAt(i);
-            if(thisChar.equals('.') && thisNode.childNodes.isEmpty()){
-                return false;
-            }
-            thisNode = thisNode.childNodes.get(word.charAt(i));
 
-            if(thisNode == null) return false;
-            //.일때는 모두 해당!!
+    private boolean dfsSearch(HashMap<Character, TrieNode> children, String word, int start){
+        if(start == word.length()){
+            if(children.size() == 0) return true;
+            else return false;
         }
-        return thisNode.getIsLast();
+
+        char c = word.charAt(start);
+
+        if(children.containsKey(c)){
+            if(start == word.length()-1 && children.get(c).isLast){
+                return true;
+            }
+
+            return dfsSearch(children.get(c).childNodes, word, start+1);
+        } else if( c == '.'){
+            boolean result = false;
+            for(Map.Entry<Character, TrieNode> child : children.entrySet()){
+                if(start == word.length()-1 && child.getValue().isLast){
+                    return true;
+                }
+
+                if(dfsSearch(child.getValue().getChildNodes(), word, start+1)){
+                    result = true;
+                }
+            }
+            return result;
+        } else return false;
     }
 }
 
