@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Baekjoon_11050 {
+public class Combination_11050 {
 
     static int[][] dp;
 
