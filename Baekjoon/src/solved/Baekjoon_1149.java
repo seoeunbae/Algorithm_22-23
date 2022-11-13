@@ -26,6 +26,7 @@ public class Baekjoon_1149 {
             cost[i][GREEN] = Integer.parseInt(st.nextToken());
             cost[i][BLUE] = Integer.parseInt(st.nextToken());
         }
+
         //메모이제이션, top-down 방식
         for(int i=1; i< N ; i++){
             cost[i][RED] += Math.min(cost[i-1][GREEN], cost[i-1][BLUE]);
