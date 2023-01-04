@@ -1,62 +1,68 @@
-//package solved;
-//
-//import java.io.BufferedReader;
-//import java.io.IOException;
-//import java.io.InputStreamReader;
-//import java.util.LinkedList;
-//import java.util.Queue;
-//import java.util.StringTokenizer;
-//
-//public class Baekjoon_2178 {
-//    static int[][] map;
-//    static int n;
-//    static int m;
-//    static boolean[][] visited;
-//    static int[] dx = { -1, 1, 0, 0 }; //x방향배열-상하
-//    static int[] dy = { 0, 0, -1, 1 }; //y방향배열-좌우
-//
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st = new StringTokenizer(br.readLine());
-//        n = Integer.parseInt(st.nextToken());
-//        m = Integer.parseInt(st.nextToken());
-//
-//        map = new int[n][m];
-//        for(int i=0; i<n; i++) {
-//            String s = br.readLine();
-//            for(int j=0; j<m; j++) {
-//                map[i][j] = s.charAt(j) - '0';
-//            }
-//        }
-//
-//        visited = new boolean[n][m];
-//        visited[0][0] = true;
-//        bfs(0, 0);
-//        System.out.println(map[n-1][m-1]);
-//    }
-//
-//    public static void bfs(int x, int y) {
-//        Queue<int[]> q = new LinkedList<>();
-//        q.add(new int[] {x,y});
-//
-//        while(!q.isEmpty()) {
-//            int now[] = q.poll();
-//            int nowX = now[0];
-//            int nowY = now[1];
-//
-//            for(int i=0; i<4; i++) {
-//                int nextX = nowX + dx[i];
-//                int nextY = nowY + dy[i];
-//
-//                if (nextX < 0 || nextY < 0 || nextX >= n || nextY >= m)
-//                    continue;
-//                if (visited[nextX][nextY] || map[nextX][nextY] == 0)
-//                    continue;
-//
-//                q.add(new int[] {nextX, nextY});
-//                map[nextX][nextY] = map[nowX][nowY] + 1;
-//                visited[nextX][nextY] = true;
-//            }
-//        }
-//    }
-//}
+package solved;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Baekjoon_2178 {
+    static int[][] graph;
+
+    static int N, M;
+    static int[] ax = new int[]{-1, 0, 1, 0};
+    static int[] ay = new int[]{0,-1,0,1};
+    static boolean[][] visited;
+
+    static Queue<int[]> queue = new LinkedList<>();
+
+    static int START_INDEX = 0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+        String[] split = br.readLine().split(" ");
+         N = Integer.parseInt(split[0]); //렬
+         M = Integer.parseInt(split[1]); //행
+        graph = new int[N+1][M+1];
+        visited = new boolean[N+1][M+1];
+        for(int i = 0 ; i<N ; i++){
+            String[] split1 = br.readLine().split("");
+            for(int j = 0 ; j<M ; j++){
+                graph[i][j]= Integer.parseInt(split1[j]);
+            }
+        }
+
+        bfs(0,0);
+
+    }
+//bfs사용해야함
+    public static void solution(){
+
+    }
+
+    public static void bfs(int x, int y){
+        visited[x][y]=true;
+        queue.add(new int[]{x,y});
+
+        while(!queue.isEmpty()){
+            int[] poll = queue.poll();
+            int eachX = poll[0];
+            int eachY = poll[1];
+            if(eachX == N-1 && eachY == M-1){
+                System.out.println(graph[eachX][eachY]);
+                break;
+            }
+            for(int i=0 ; i<4 ;i++){
+                int dx = eachX + ax[i];
+                int dy = eachY + ay[i];
+
+                if(dx >= 0 && dy >= 0 && dx < N && dy < M){
+                    if(!visited[dx][dy] && graph[dx][dy]==1){
+                        queue.add(new int[]{dx, dy});
+                        visited[dx][dy] = true;
+                        graph[dx][dy]= graph[eachX][eachY]+1;
+                    }
+                }
+            }
+        }
+    }
+}
