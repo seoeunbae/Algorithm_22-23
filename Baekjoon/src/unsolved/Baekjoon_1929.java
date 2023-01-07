@@ -1,4 +1,4 @@
-package solved;
+package unsolved;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +8,7 @@ public class Baekjoon_1929 {
     static int[] primeArray;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int K = Integer.parseInt(br.readLine());
         String[] split = br.readLine().split(" ");
         int M = Integer.parseInt(split[0]);
         int N = Integer.parseInt(split[1]);
