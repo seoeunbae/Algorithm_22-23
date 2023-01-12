@@ -20,11 +20,11 @@ public class Combination_11050 {
     }
 
     public static int Factorial(int N, int K){
-        if(dp[N][K] > 0){
+        if( dp[N][K] > 0 ){
             return dp[N][K];
         }
 
-        if(N==K || K==0){
+        if( N == K || K == 0 ){
             return dp[N][K] = 1;
         }
 
