@@ -20,17 +20,18 @@ public class Baekjoon_1806 {
 
         String[] split1 = br.readLine().split(" ");
         int[] Ns = Arrays.stream(split1).mapToInt(Integer::parseInt).toArray();
-        int sum = 0;
+        int sum = Ns[0];
 
-        for(int L = 1  ; L <= N ; L++){
+        for(int L = 0  ; L < N ; L++){
 
-            while( R + 1 <= N && sum < S){
+
+            while( R + 1 < N && sum < S){
                 R++;
-                sum += Ns[R-1];
+                sum += Ns[R];
             }
             if(sum >= S){
-                sum -= Ns[L - 1];
-
+//                sum -= Ns[L - 1];
+                sum -= Ns[L];
 //                System.out.println("ekq");
                 answer = Math.min(answer, R- L + 1);
             }
