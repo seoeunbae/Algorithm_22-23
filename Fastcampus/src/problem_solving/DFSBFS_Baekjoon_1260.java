@@ -3,10 +3,7 @@ package problem_solving;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class DFSBFS_Baekjoon_1260 {
     static int N;
@@ -26,11 +23,15 @@ public class DFSBFS_Baekjoon_1260 {
         start = Integer.parseInt(s[2]);
         graph = new ArrayList[N+1];
         visited1 = new boolean[N+1];
+        Arrays.fill(visited1, false);
         visited2 = new boolean[N+1];
+        Arrays.fill(visited2 , false);
 
-        Arrays.fill(graph, new ArrayList<>());
+        for(int i=0; i <= N ; i++){
+            graph[i] = new ArrayList<>();
+        }
 
-        for (int i = 0 ; i < M ; i ++ ){
+        for (int i = 1 ; i <= M ; i ++ ){
             String[] s1 = br.readLine().split(" ");
 
             Integer v1 = Integer.parseInt(s1[0]);
@@ -39,6 +40,9 @@ public class DFSBFS_Baekjoon_1260 {
             graph[v1].add(v2);
             graph[v2].add(v1);
 
+        }
+        for(int i=1 ; i <=N ; i++){
+            Collections.sort(graph[i]);
         }
 
         dfs(start);
@@ -51,17 +55,15 @@ public class DFSBFS_Baekjoon_1260 {
 
     public static void dfs(int v){
         visited1[v] = true;
-        System.out.print(v+" ");
+        System.out.print(v + " ");
         for(int i : graph[v]){
-            System.out.println("for");
-            if(visited1[i]) continue;
-            else dfs(i);
+            if(!visited1[i]) dfs(i);
+
         }
 
     }
 
     public static void bfs(int v){
-        System.out.println("bfs");
         Queue<Integer> queue = new LinkedList<>();
 
         queue.add(v);
