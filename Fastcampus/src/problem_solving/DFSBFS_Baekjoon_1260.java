@@ -46,12 +46,13 @@ public class DFSBFS_Baekjoon_1260 {
         }
 
         dfs(start);
-//        Arrays.fill(visited, false);
         System.out.println();
         bfs(start);
 
 
     }
+
+
 
     public static void dfs(int v){
         visited1[v] = true;
