@@ -26,6 +26,7 @@ public class DFSBFS_Baekjoon_2667 {
         }
     }
 
+
     public static void main(String[] args) throws IOException {
         input();
         pro();
