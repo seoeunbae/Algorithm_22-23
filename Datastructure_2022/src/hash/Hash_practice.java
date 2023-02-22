@@ -21,7 +21,7 @@ public class Hash_practice {
                 if(hashTable[address].key.equals(key)) {
                     Slot findSlot = hashTable[address];
                     Slot prevSlot = hashTable[address];
-                    while(findSlot != null){
+                    while(findSlot != null){ //
                         if(findSlot.key ==key){
                             findSlot.value = value;
                             return true;
@@ -46,13 +46,13 @@ public class Hash_practice {
 //                return hashTable[address].value;
                 Slot findSlot = hashTable[address];
 
-                while(findSlot != null){
+                while(findSlot != null){ //
                     if( findSlot.key != key) {
                         findSlot = findSlot.next;
                     } else return findSlot.value;
                 }
                 return null;
-            }else {
+            } else {
                 return null;
             }
         }
