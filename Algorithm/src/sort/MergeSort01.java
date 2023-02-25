@@ -3,7 +3,7 @@ package sort;
 import java.util.ArrayList;
 //이 부분 다시 한번 보기
 public class MergeSort01 {
-    //배열을 앞뒤 두 배열로 짜르는 코드 작성(mergesort중에 분할하는과정에 사용됨)
+    //배열을 앞뒤 두 배열로 짜르는 코드 작성 ( mergesort중에 분할하는과정에 사용됨)
     public class Split{
         public void splitFunc(ArrayList<Integer> dataList){
             if(dataList.size() <= 1){

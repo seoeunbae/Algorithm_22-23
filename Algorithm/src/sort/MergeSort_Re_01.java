@@ -10,7 +10,6 @@ public class MergeSort_Re_01 {
     public static void main(String[] args) {
         Split split = new Split();
 
-        while()
     }
     public static class Split{
         public static ArrayList<Integer> splitFunc(ArrayList<Integer> dataList){

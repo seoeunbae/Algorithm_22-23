@@ -3,11 +3,16 @@ package problem_solving;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class String_reverse_01 {
     static String string;
     static char[] chars ;
+
+    static ArrayList<Integer> list;
+
 
 
 
@@ -60,5 +65,6 @@ public class String_reverse_01 {
     public static boolean hasBracket(String string){
         return string.contains("(") || string.contains(")");
     }
+
 
 }

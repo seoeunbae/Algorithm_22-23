@@ -12,8 +12,8 @@ public class SelectionSort03 {
         int lowest;
         for(int stand = 0 ; stand < dataList.size()-1 ; stand++){
             lowest = stand;
-            for(int index = stand+1;index< dataList.size();index++){
-                if(dataList.get(lowest) > dataList.get(index)){
+            for ( int index = stand + 1 ; index < dataList.size() ; index++){
+                if( dataList.get(lowest) > dataList.get(index)){
                     lowest = index;
                 }
             }
