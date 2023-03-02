@@ -24,13 +24,13 @@ public class MergeSort_Re_01 {
 
             rightList = splitFunc(new ArrayList<>(dataList.subList(medium, dataList.size())));
 
-            return mergeFunc(leftList, rightList);
+//            return mergeFunc(leftList, rightList);
 
         }
 
     }
 
-    public static ArrayList<Integer> mergeFunc(ArrayList<Integer> leftList, ArrayList<Integer> rightList){
-
-    }
+//    public static ArrayList<Integer> mergeFunc(ArrayList<Integer> leftList, ArrayList<Integer> rightList){
+//
+//    }
 }
