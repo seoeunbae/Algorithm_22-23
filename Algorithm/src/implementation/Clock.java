@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class Clock {
 
     static int count =0;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Integer N = Integer.parseInt(br.readLine());
