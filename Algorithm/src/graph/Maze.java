@@ -63,53 +63,24 @@ public class Maze {
         return graph[n - 1][m - 1];
     }
 
-//    public static void bfs(int x , int y) {
-//        Queue<int[]> queue = new LinkedList<>();
-//        queue.add(new int[]{x, y});
-//
-//        while (!queue.isEmpty()) {
-//            int[] poll = queue.poll();
-//
-//             x = poll[0];
-//             y = poll[1];
-//
-//            System.out.println(x + " " + y);
-//            for (int i = 0; i < 4; i++) {
-//                int ax = x + dx[i];
-//                int ay = y + dy[i];
-//                if (ax >= 0 && ax < N && ay >= 0 && ay < N) {
-//                    if (graph[ax][ay] == 0) continue;
-//                    if (graph[ax][ay] == 1) {
-//                        graph[ax][ay] = graph[x][y] + 1;
-//                        queue.add(new int[]{ax, ay});
-//
-//                        System.out.println("=" + ax + " " + ay);
-//                        System.out.println("graph" + graph[ax][ay]);
-//                    }
-//                }
-//
-//            }
-//            System.out.println(graph[N - 1][M - 1]);
-//        }
-//    }
-public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-    // N, M을 공백을 기준으로 구분하여 입력 받기
-    n = sc.nextInt();
-    m = sc.nextInt();
-    sc.nextLine(); // 버퍼 지우기
+        // N, M을 공백을 기준으로 구분하여 입력 받기
+        n = sc.nextInt();
+        m = sc.nextInt();
+        sc.nextLine(); // 버퍼 지우기
 
-    // 2차원 리스트의 맵 정보 입력 받기
-    for (int i = 0; i < n; i++) {
-        String str = sc.nextLine();
-        for (int j = 0; j < m; j++) {
-            graph[i][j] = str.charAt(j) - '0';
+        // 2차원 리스트의 맵 정보 입력 받기
+        for (int i = 0; i < n; i++) {
+            String str = sc.nextLine();
+            for (int j = 0; j < m; j++) {
+                graph[i][j] = str.charAt(j) - '0';
+            }
         }
-    }
 
-    // BFS를 수행한 결과 출력
-    System.out.println(bfs(0, 0));
-}
+        // BFS를 수행한 결과 출력
+        System.out.println(bfs(0, 0));
+    }
 }
 
