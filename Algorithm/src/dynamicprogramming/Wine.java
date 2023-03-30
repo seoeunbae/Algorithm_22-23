@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class Wine {
     static int[] array;
     static int[] dp;
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
