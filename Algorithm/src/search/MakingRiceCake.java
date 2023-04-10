@@ -1,8 +1,6 @@
 package search;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -55,7 +53,11 @@ public class MakingRiceCake {
                 result += (each - mid);
             }
         }
+        
+        int[] arrays = new int[]{0,1,2};
+        int sum = Arrays.stream(arrays).sum();
         return result;
+        
     }
 
 
