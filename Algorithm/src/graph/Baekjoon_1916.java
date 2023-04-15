@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.*;
 
-
-
 public class Baekjoon_1916 {
     static int N, M;
     static ArrayList<ArrayList<Node>> a; // adjacency list.
@@ -77,17 +75,17 @@ public class Baekjoon_1916 {
         return dist[end];
     }
 
-    static class  Node  implements  Comparable< Node>  {
-        int  end;
-        int  weight;
+    static class Node  implements Comparable<Node>  {
+        int end;
+        int weight;
 
-        Node( int  end,  int  weight) {
+        Node(int end, int weight) {
             this .end =  end;
             this .weight =  weight;
         }
 
         @Override
-        public  int  compareTo(Node o) {
+        public int compareTo(Node o) {
             return  weight -  o.weight;
         }
 
