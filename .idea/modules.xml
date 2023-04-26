@@ -5,8 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/Algorithm/Algorithm.iml" filepath="$PROJECT_DIR$/Algorithm/Algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithm_2022.iml" filepath="$PROJECT_DIR$/Algorithm_2022.iml" />
       <module fileurl="file://$PROJECT_DIR$/BOJ/BOJ.iml" filepath="$PROJECT_DIR$/BOJ/BOJ.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Baekjoon/Baekjoon.iml" filepath="$PROJECT_DIR$/Baekjoon/Baekjoon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Fastcampus/Fastcampus.iml" filepath="$PROJECT_DIR$/Fastcampus/Fastcampus.iml" />
     </modules>
   </component>
 </project>
