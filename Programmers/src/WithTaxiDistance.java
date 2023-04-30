@@ -1,13 +1,12 @@
-
-
 import java.util.*;
+
 
 public class WithTaxiDistance {
     static ArrayList<ArrayList<Node>> board = new ArrayList<>();
     static int[] distance;
     static boolean[] visited;
     static int[] withDistance;
-
+    static int[][] dist;
 
     public class Node{
         int node;
@@ -18,80 +17,56 @@ public class WithTaxiDistance {
             this.edge = edge;
         }
 
-        @Override
-        public boolean equals(Object o){
-            int object = (int)o;
-            return object == this.node;
-        }
 
-        @Override
-        public int hashCode(){
-            return Objects.hash(this.node);
-        }
     }
 
     public int solution(int n, int s, int a, int b, int[][] fares) {
         distance = new int[n+1];
         visited = new boolean[n+1];
-        withDistance = new int[n+1];
+        dist = new int[n+1][n+1];
 
-        for(int i=0 ; i <= n ; i++){
-            board.add(new ArrayList<Node>());
-        }
-        for(int i=0 ; i < fares.length ; i++){
-            int n1 = fares[i][0];
-            int n2 = fares[i][1];
-            int n3 = fares[i][2];
-
-            board.get(n1).add(new Node(n2, n3));
-            board.get(n2).add(new Node(n1, n3));
-
-        }
-
-        return dijkstra(s , n ,a,b);
-
-    }
-
-    public Integer dijkstra(int start, int n ,int a, int b){
-        PriorityQueue<Node> pq = new PriorityQueue<Node>(Comparator.comparingInt(o -> o.edge));
-        //무한대로 초기화
-        for(int i = 0 ; i <= n ; i++){
-            distance[i] = (int) 1e9;
-        }
-        //시작점 0으로 설정
-        pq.add(new Node(start, 0));
-        distance[start] = 0;
-
-        while(!pq.isEmpty()){
-
-            Node poll = pq.poll();
-            int index = poll.node;
-            int weight = poll.edge;
-            if(visited[index]) continue;
-            visited[index] = true;
-
-            for(Node node : board.get(index)){
-                int cost = node.edge + distance[index];
-                if(cost < distance[node.node]){
-                    distance[node.node] = cost;
-                    withDistance[node.node] = cost/2;
-                    pq.add(new Node(node.node, distance[node.node]));
-                }
+        for(int i=1 ; i <= n ; i++){
+            for(int j=1 ; j <= n ; j++){
+                if(i==j) {
+                    dist[i][j] = 0;
+                } else dist[i][j] = 40000000;
 
             }
+
+        }
+        for(int[] edge : fares){
+            int si = edge[0];
+            int e = edge[1];
+            int x = edge[2];
+            dist[si][e] = x;
+            dist[e][si] = x;
         }
 
-        int answer = 0;
-        for(int i=0 ; i <= n ; i++){
-            Integer i1 = board.get(i).indexOf((int)a);
-            Integer i2 = board.get(i).indexOf((int)b);
-            if(i1 == null || i2 == null) continue;
-            int withCost = distance[i]/2 + board.get(i).get(i1).edge+ board.get(i).get(i2).edge;
-            if(withCost < distance[a] + distance[b]){
-                answer = withCost;
-            }
+        floyd(n);
 
+        int answer = (int) 1e9;
+
+        for(int k = 1 ; k <= n ; k++){
+            answer = Math.min(answer, dist[s][k]+dist[k][a]+dist[k][b]);
         }
         return answer;
+
     }
+
+
+
+
+    public void floyd(int n){
+        for(int k = 1 ; k <= n ; k++){
+            for(int a = 1 ; a <= n ; a++){
+                for(int b =  1 ; b <= n ; b++){
+                    if(dist[a][k] + dist[k][b] < dist[a][b]){
+                        dist[a][b] = dist[a][k] + dist[k][b];
+                    }
+                }
+            }
+        }
+    }
+
+
 }
