@@ -3,10 +3,8 @@ package backtracking;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Baekjoon_10972 {
     static int N ;
@@ -15,42 +13,35 @@ public class Baekjoon_10972 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-         N = Integer.parseInt(br.readLine());
-//        char[] chars = br.readLine().toCharArray();
-//        for(int i=0 ; i < N ; i++){
-//            int current = chars[0] - '0';
-//
-//
-//        }
-        ArrayList<Integer> letter= new ArrayList<>();
+        N = Integer.parseInt(br.readLine());
+        List<Integer> collect = Arrays.stream(br.readLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
 
-        permutation(0, letter );
-        for(ArrayList<Integer> each : letters){
-            for(Integer eachI : each){
-                System.out.print(eachI);
-            }
-            System.out.println();
+
+        List<Integer> result = nextPermutation(collect);
+
+        for(int num : result){
+            System.out.print(num+" ");
         }
-
     }
-    static HashSet<Integer> used = new HashSet<>();
 
-    public static void permutation(int level , ArrayList<Integer> letter){
-        if(level==N){
-            letters.add(new ArrayList<>(letter));
-            return;
+    private static List<Integer> nextPermutation(List<Integer> nums) {
+        int n = nums.size();
+        int i = n - 2;
+        while (i >= 0 && nums.get(i) >= nums.get(i+1)) {
+            i -= 1;
         }
 
-        for(int i=1 ; i <=  N ;i++) {
-            if (used.contains(i)) continue;
-
-            used.add(i);
-            letter.add(i);
-            permutation(level+1, letter);
-            used.remove(i);
-            letter.remove(letter.size()-1);
+        if (i == -1) {
+            return Collections.singletonList(-1);
         }
 
+        int j = n - 1;
+        while (nums.get(j) <= nums.get(i)) {
+            j -= 1;
+        }
 
+        Collections.swap(nums, i, j);
+        Collections.reverse(nums.subList(i+1, n));
+        return nums;
     }
 }
