@@ -82,7 +82,6 @@ public class Dijkstra {
     }
 
     public static class Node implements Comparable<Node>  {
-
         private int index;
         private int edge;
 
@@ -95,8 +94,6 @@ public class Dijkstra {
         public int compareTo(Node o) {
             return this.edge - o.edge;
         }
-
-
     }
 
 
