@@ -1,10 +1,7 @@
 package graph;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class FloydWarshal {
     static int N;
@@ -21,6 +18,7 @@ public class FloydWarshal {
          N  = Integer.parseInt(NMs[0]);
          M  = Integer.parseInt(NMs[1]);
         board = new int[N+1][N+1];
+        int[] array = new int[3];
         for(int i=0 ; i<= N ; i++){
             Arrays.fill(board[i], INF);
         }
@@ -60,6 +58,14 @@ public class FloydWarshal {
         if(distance >= INF) System.out.println(-1+"\n");
         else System.out.println(distance);
 
+
+        ArrayList<String> strings = new ArrayList<>();
+        strings.sort(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length()-o2.length();
+            }
+        });
 
     }
 
