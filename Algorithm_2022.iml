@@ -9,8 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Baekjoon/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Fastcampus/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Programmers/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Algorithm_Python/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (Algorithm_Python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
