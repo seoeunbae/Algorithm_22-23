@@ -9,7 +9,6 @@ class PrivacyTermValid {
         int[] answer = {};
         ArrayList<Integer> result = new ArrayList<>();
         HashMap<String, Integer> term = new HashMap<>();
-
         // String[] todays = today.split("\\.");
         int todayDay = getDate(today);
         // int year = Integer.parseInt(todays[0]);

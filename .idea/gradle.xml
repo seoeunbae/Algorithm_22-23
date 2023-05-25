@@ -5,19 +5,19 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/codingtest" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Algorithm_Python" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/codingtest" />
+            <option value="$PROJECT_DIR$/Algorithm_Python" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/wantedcote" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/codingtest" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/wantedcote" />
+            <option value="$PROJECT_DIR$/codingtest" />
           </set>
         </option>
       </GradleProjectSettings>

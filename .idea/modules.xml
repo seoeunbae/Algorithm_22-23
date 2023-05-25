@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Algorithm/Algorithm.iml" filepath="$PROJECT_DIR$/Algorithm/Algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithm_2022.iml" filepath="$PROJECT_DIR$/Algorithm_2022.iml" />
-      <module fileurl="file://$PROJECT_DIR$/BOJ/BOJ.iml" filepath="$PROJECT_DIR$/BOJ/BOJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Algorithm_Python/Algorithm_Python.iml" filepath="$PROJECT_DIR$/Algorithm_Python/Algorithm_Python.iml" />
     </modules>
   </component>
 </project>

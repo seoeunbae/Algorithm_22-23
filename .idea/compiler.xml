@@ -2,7 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="wantedcote" target="11" />
+      <module name="wantedcote.main" target="11" />
+      <module name="wantedcote.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
