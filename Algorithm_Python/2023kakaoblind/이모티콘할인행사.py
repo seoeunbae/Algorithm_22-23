@@ -21,4 +21,3 @@ def yield_discount_rate_price_combination(emoticons, prefix):
     for i in range (10 ,50 , 10):
         price = emoticons[0] * ( 1 - 0.01 * i)
         yield from yield_discount_rate_price_combination(emoticons[1:], prefix + [(i, price)])
-

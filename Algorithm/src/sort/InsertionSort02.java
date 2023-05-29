@@ -14,6 +14,7 @@ public class InsertionSort02 {
                 Collections.swap(dataList,i,i+1);
             }
         }
+
         System.out.println(dataList);
     }
 }
