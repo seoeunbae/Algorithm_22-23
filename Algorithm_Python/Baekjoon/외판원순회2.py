@@ -10,35 +10,42 @@ for _ in range(n):
 
 answer = []
 
+visit = [0 for i in range(n)]
+global total_distance
+total_distance = 0
 
-def dfs(x: int):
-    visited = [0 for i in range(n)]
-    dq = deque()
-    dq.append(x)
+global cost
+cost = 0
 
-    total_distance = 0
-    while dq:
-        pop = dq.pop()
-        if visited[pop] == 1:
-            continue
-        visited[pop] = 1
-        if sum(visited) == 4:
-            total_distance = total_distance + board[pop][x]
-            return total_distance
+global first
+first = 0
 
-        min = 22222222
-        for i in range(n):
-            if visited[i] == 0 and board[pop][i] != 1111111:
-                if min > board[pop][i] :
-                    min = board[pop][i]
-                    dq.append(i)
-                    total_distance += min
-    return total_distance
+def dfs(x: int, val: int, depth = 1):
 
-for zz in range(n):
-    print(zz)
-    answer.append(dfs(zz))
 
-print(answer)
-print(min(answer))
+
+    global cost
+    if depth == n:
+        for _cost in board[x]:
+            if board[x].index(_cost) == first:
+                cost = min(cost, val+_cost)
+        return
+
+    if visit[x]==1:
+        return
+    visit[x] = 1
+
+    for _cost in board[x]:
+        nx = board[x].index(_cost)
+        if not visit[nx]:
+            dfs(nx, val+_cost, depth+1)
+            visit[nx] = 0
+
+
+for i in range(n):
+    visit = [False] * n
+    first = i
+    cost = 0
+    dfs(i, 0)
+print(cost)
 
