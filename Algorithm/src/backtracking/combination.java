@@ -24,7 +24,7 @@ public class combination {
             combi.add(i+1);
         }
 
-        combination(1,combi, list);
+        combination(1, combi, list);
 
         for(ArrayList<Integer> listEach : lists){
             for(Integer each :listEach){
@@ -34,9 +34,11 @@ public class combination {
         }
     }
     static HashSet<Integer> used = new HashSet<>();
+
     public static void combination(int prevIndx ,ArrayList<Integer> combi, ArrayList<Integer> currentCombi){
         if(currentCombi.size() == M){
             lists.add(new ArrayList<>(currentCombi));
+
             return;
         }
 
@@ -46,7 +48,7 @@ public class combination {
 
             currentCombi.add(num);
             used.add(num);
-            combination(num,combi,currentCombi);
+            combination(num, combi ,currentCombi);
             currentCombi.remove(currentCombi.size()-1);
             used.remove(num);
         }
