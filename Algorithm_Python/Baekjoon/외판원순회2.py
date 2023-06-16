@@ -21,9 +21,6 @@ global first
 first = 0
 
 def dfs(x: int, val: int, depth = 1):
-
-
-
     global cost
     if depth == n:
         for _cost in board[x]:
