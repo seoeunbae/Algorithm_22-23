@@ -31,3 +31,4 @@ def check(binary, parent) -> bool:
     return check(binary[:root_idx], root) and check(binary[root_idx+1:], root)
 
 
+solution([7,42,5])
