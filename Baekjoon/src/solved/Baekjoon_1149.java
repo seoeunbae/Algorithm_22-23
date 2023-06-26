@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Baekjoon_1149 {
     final static int RED = 0;
@@ -39,5 +41,7 @@ public class Baekjoon_1149 {
     }
 
 
-
+    AtomicInteger atomicInteger = new AtomicInteger();
+    AtomicLong atomicLong = new AtomicLong();
+    Collections
 }
