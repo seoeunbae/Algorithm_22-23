@@ -1,6 +1,7 @@
 package solved;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Palindrome {
@@ -29,6 +30,7 @@ public class Palindrome {
         }
         System.out.println(result);
         return s.equals(result);
+
     }
 }
 //integer를 string으로 바꾼 뒤, 문자열 뒤집기를 한뒤 동일성비교를 한다.
@@ -36,4 +38,3 @@ public class Palindrome {
 //2. temp를 활용한 문자열 뒤집기
 //3. String 합쳐서 String으로 만들기
 //4. 뒤집은 문자열과 원래 입력값의 동일성 비교
-
