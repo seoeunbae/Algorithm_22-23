@@ -1,4 +1,4 @@
-# Leetcode 64
+# leetcode 64
 
 class Solution(object):
     def minPathSum(self, grid):

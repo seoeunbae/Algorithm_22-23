@@ -40,8 +40,4 @@ public class Baekjoon_1149 {
         System.out.println(Math.min(Math.min(cost[N-1][RED], cost[N-1][GREEN]), cost[N-1][BLUE]));
     }
 
-
-    AtomicInteger atomicInteger = new AtomicInteger();
-    AtomicLong atomicLong = new AtomicLong();
-    Collections
 }
