@@ -22,7 +22,7 @@ public class permutation {
 //        }
         ArrayList<Integer> letter= new ArrayList<>();
 
-        permutation(0, letter );
+        permutation(0, letter);
         for(ArrayList<Integer> each : letters){
             for(Integer eachI : each){
                 System.out.print(eachI);
@@ -33,7 +33,7 @@ public class permutation {
     }
     static HashSet<Integer> used = new HashSet<>();
 
-    public static void permutation(int level , ArrayList<Integer> letter){
+    public static void permutation(int level, ArrayList<Integer> letter){
         if(level==N){
             letters.add(new ArrayList<>(letter));
             return;
