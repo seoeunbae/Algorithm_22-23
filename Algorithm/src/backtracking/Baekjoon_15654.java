@@ -3,7 +3,6 @@ package backtracking;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
@@ -12,9 +11,7 @@ public class Baekjoon_15654 {
     static StringTokenizer st;
     static int[] array;
     static int[] eachArray;
-
     static boolean[] visited;
-
     static int N;
     static int M;
 
