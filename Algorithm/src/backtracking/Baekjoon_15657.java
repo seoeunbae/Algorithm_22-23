@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Baekjoon_15656 {
+public class Baekjoon_15657 {
     static int[] temp;
     static int N;
     static int M;
@@ -14,7 +14,6 @@ public class Baekjoon_15656 {
     static boolean[] visited;
     static int[] array;
     static StringBuilder sb;
-
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,7 +23,6 @@ public class Baekjoon_15656 {
         sb= new StringBuilder();
         visited = new boolean[N];
         array = new int[N];
-
         st = new StringTokenizer(br.readLine());
         for(int i=0 ; i < N ; i++) {
             array[i] = Integer.parseInt(st.nextToken());
@@ -32,24 +30,27 @@ public class Baekjoon_15656 {
         Arrays.sort(array);
 
         temp = new int[M];
-        permutation(0, temp);
+        permutation(0,0, temp);
         System.out.println(sb.toString());
     }
 
-    public static void permutation(int level, int[] temp){
-        if(level == M){
-            for(int each : temp){
-                sb.append(each).append(" ");
-            }
-            sb.append("\n");
+    public static void permutation(int prev, int level, int[] temp){
+        if (level== M){
+            print(temp);
             return;
         }
 
-        for(int i=0; i < N ; i++){
-//            visited[i] = true;
-            temp[level] = array[i];
-            permutation(level+1, temp);
-//            visited[i] = false;
+        for(int j = prev; j < N ; j++){
+            temp[level] = array[j];
+            permutation(j, level+1, temp);
+
         }
+    }
+
+    public static void print(int[] temp){
+        for(int each : temp){
+            sb.append(each).append(" ");
+        }
+        sb.append("\n");
     }
 }
