@@ -7,3 +7,7 @@
 /.project
 /Algorithm/.classpath
 /Algorithm/.project
+/.recommenders/caches
+/.idea
+/.DS_Store
+
