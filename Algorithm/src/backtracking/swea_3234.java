@@ -3,6 +3,7 @@ package backtracking;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class swea_3234 {
@@ -15,6 +16,7 @@ public class swea_3234 {
 
 
     static boolean[] visited;
+    static boolean[] visitedLevel;
     static int count;
 
 
@@ -24,7 +26,7 @@ public class swea_3234 {
         for (int tc = 1 ; tc <= t ; tc++){
             n = Integer.parseInt(br.readLine());
             weights = new int[n];
-
+            visitedLevel = new boolean[n];
             visited = new boolean[n];
             st = new StringTokenizer(br.readLine());
 
@@ -34,30 +36,43 @@ public class swea_3234 {
 
             int[][] scale = new int[2][n];
 
-            for(int i=0 ; i < 2 ; i++){
-                bf(0, i, scale);
-            }
+            bf(0, scale);
             System.out.println(count);
         }
 
     }
 
-    public static void bf(int level,int LR, int[][] scale){
+    public static void bf(int level, int LR, int[][] scale){
         if (level == n){
             if (isLeftSmaller(scale, null)){
+            	System.out.println(Arrays.toString(scale[0]));
+            	System.out.println(Arrays.toString(scale[1]));
+            	System.out.println("----------");
                 count++;
             }
             return;
         }
-
+         
         for(int i=0 ; i < n ; i++){
-            if(!visited[i]){
+            if(!visited[i] && isLeftSmaller(scale, weights[i])){
                 visited[i] = true;
-                scale[LR][level] = weights[i];
-                if(!isLeftSmaller(scale, weights[i])) continue;
-                bf(level+1, 0, scale); // scale를 초기화 해줘야함
+                 
+                visitedLevel[level] = true;
+                scale[0][level] = weights[i]; 
+                bf(level+1, 0, scale);
+                scale[0][level] = 0;
+                scale[1][level] = weights[i]; 
                 bf(level+1, 1, scale);
-
+                scale[1][level] = 0; 
+                visitedLevel[level] = true;
+                visited[i] = false;
+            }
+            else if(!visited[i]  && !isLeftSmaller(scale, weights[i])) {
+            	 visited[i] = true;
+            	 scale[1][level] = weights[i]; 
+            	 visitedLevel[level] = true;
+                bf(level+1, , scale);
+                visitedLevel[level] = false;
                 visited[i] = false;
             }
         }

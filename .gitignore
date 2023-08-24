@@ -2,4 +2,8 @@
 /bin/
 /Algorithm/backtracking/JavaTest.java
 /production
-
+/.metadata
+/.classpath
+/.project
+/Algorithm/.classpath
+/Algorithm/.project
