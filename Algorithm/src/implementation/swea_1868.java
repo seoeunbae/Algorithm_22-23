@@ -107,12 +107,14 @@ public class swea_1868 {
                 int ay = poll[0] + deltas[i][0];
                 int ax = poll[1] + deltas[i][1];
 
+                if(!inRange(ay,ax) || visited[ay][ax] ) continue;
+                int zero = mineMap[ay][ax]; //2
+                if (temp == 0) {
+                    map[ay][ax] = zero; //부모가 0 이었으면, 숫자표시넣기 /아직-1
+                    continue;
+                }
                 if(inRange(ay,ax) && map[ay][ax] != -2 ){
-                    int zero = mineMap[ay][ax]; //2
-                    if (temp == 0) {
-                        map[ay][ax] = zero; //부모가 0 이었으면, 숫자표시넣기 /아직-1
-                        continue;
-                    }
+
                     if(!visited[ay][ax]) {
                         visited[ay][ax] = true;
                         if (zero == 0) { // 0인 경우 큐에 넣기
