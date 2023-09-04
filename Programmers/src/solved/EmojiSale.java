@@ -25,20 +25,20 @@ public class EmojiSale {
             User user = new User(users[i][0], users[i][1]);
             userList.add(user);
         }
-        int serviceUser = 0;
+        int serviceUser = 0; //서비스 가입 유저
         int tsu = 0;
         int tm = 0;
         int ttm = 0;
         while(maxPercent > minPercent){
-            int money=0;
-
-            ttm = 0;
+        	//
+            int money=0; //한 유저당 구매액
+            	
+            ttm = 0; // 총 수익
             for(User user : userList){
                 money = 0;
-                serviceUser=0;
                 tm=0;
                 ttm=0;
-                int emojiPrice= 0;
+                int emojiPrice = 0; //해당 퍼센트에 맞는 이모지 가격
                 for(int emoji : emoticons){
                     emojiPrice = emoji*(1-maxPercent/100);
                     if (user.percent <= maxPercent) money += emojiPrice;
@@ -58,7 +58,8 @@ public class EmojiSale {
                 }
 
             }
-            maxPercent--;
+            
+            maxPercent-=10;
         }
         System.out.println(tsu+ " " + ttm);
         return new int[]{tsu, ttm};
