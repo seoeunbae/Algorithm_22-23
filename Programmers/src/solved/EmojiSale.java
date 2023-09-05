@@ -1,6 +1,7 @@
 package solved;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class EmojiSale {
 
@@ -10,6 +11,8 @@ public class EmojiSale {
         int[][] users = {{40, 10000}, {25, 10000}};
         int[] emoticons = {7000, 9000};
         solution(users, emoticons);
+        char[] chars = new char[10];
+        chars.toString()
     }
 
     public static int[] solution(int[][] users, int[] emoticons) {
