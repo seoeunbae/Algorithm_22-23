@@ -47,7 +47,7 @@ public class Dijkstra {
         PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(n -> n.edge));
 
         for(int i=0 ; i <= N ; i++){
-            distance[i]= Integer.MAX_VALUE;
+            distance[i] = Integer.MAX_VALUE;
         }
         pq.add(new Node(c, 0));
         distance[c] = 0;
