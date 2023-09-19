@@ -67,17 +67,17 @@ public class boj_1238 {
 
 		
 		for(int i=1 ; i <= n ; i++) {
-			if(i==k) continue;
-			for(int j=1 ; j <= n ; j++) {
-				distance[i] = Integer.MAX_VALUE;
+			if(i != k) {
+				for(int j=1 ; j <= n ; j++) {
+					distance[j] = Integer.MAX_VALUE;
+				}
+				distance[i] = 0;
+				dijkstra(i);
+				total[i] += distance[k];
 			}
-			distance[i] = 0;
-			dijkstra(i);
-			System.err.println(Arrays.toString(distance));
-			total[i] += distance[k];
 		}
 
-
+		
 		System.out.println(Arrays.toString(total));
 		
 	}
