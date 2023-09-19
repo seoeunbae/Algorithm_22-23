@@ -1,4 +1,5 @@
 package backtracking;
+
 import java.util.*;
 
 public class next_permutation {

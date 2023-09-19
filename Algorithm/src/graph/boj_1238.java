@@ -76,10 +76,11 @@ public class boj_1238 {
 				total[i] += distance[k];
 			}
 		}
-
-		
-		System.out.println(Arrays.toString(total));
-		
+		int ans = 0;
+		for(int i=1 ; i <= n ; i++){
+			ans = Math.max(ans, total[i]);
+		}
+		System.out.println(ans);
 	}
 	
 	public static void dijkstra(int x) {
@@ -100,4 +101,6 @@ public class boj_1238 {
 			}
 		}
 	}
+
+
 }
