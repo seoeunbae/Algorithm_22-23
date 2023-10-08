@@ -50,6 +50,7 @@ public class boj_1922_kruskal {
             int c = Integer.parseInt(st.nextToken());
             edges[i] = new Edge(a,b,c);
         }
+
         //for로 최소 비용 간선부터 순회하면서, 유니온을 할 수 있다면, 실행
         Arrays.sort(edges); // 오름차순 정렬
         int value = 0;
